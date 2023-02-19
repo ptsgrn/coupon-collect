@@ -1,36 +1,36 @@
 import { browser } from '$app/environment';
-import { writable } from 'svelte/store'
+import { writable } from 'svelte/store';
 
 const initUserData = [
-  {
-    username: 'johndoe',
-    fullname: 'John Doe',
-    email: 'johndoe@test.com',
-    phone: '0123456789',
-    password: '123456',
-    coupon: [
-      {
-        name: 'คูปองต้อนรับสมัครบัญชีใหม่',
-        code: 'WELCOME',
-        amount: 20,
-        amount_type: 'fixed',
-        amount_limit: 100,
-        isUsed: false
-      }
-    ]
-  }
-]
+	{
+		username: 'johndoe',
+		fullname: 'John Doe',
+		email: 'johndoe@test.com',
+		phone: '0123456789',
+		password: '123456',
+		coupon: [
+			{
+				name: 'คูปองต้อนรับสมัครบัญชีใหม่',
+				code: 'WELCOME',
+				amount: 20,
+				amount_type: 'fixed',
+				amount_limit: 100,
+				isUsed: false
+			}
+		]
+	}
+];
 
 const initCouponData = [
-  {
-    name: 'คูปองต้อนรับสมัครบัญชีใหม่',
-    code: 'WELCOME',
-    amount: 20,
-    amount_type: 'fixed',
-    amount_limit: 100,
-    isUsed: false
-  }
-]
+	{
+		name: 'คูปองต้อนรับสมัครบัญชีใหม่',
+		code: 'WELCOME',
+		amount: 20,
+		amount_type: 'fixed',
+		amount_limit: 100,
+		isUsed: false
+	}
+];
 
 const initProductData = [
 	{
@@ -46,57 +46,47 @@ const initProductData = [
 		price: 55
 	},
 	{
-    name: 'Iced Cappuccino',
-    price: 65
-  },
-  {
-    name: 'Hot Latte',
-    price: 55
-  },
-  {
-    name: 'Iced Latte',
-    price: 65
-  },
-  {
-    name: 'Hot Mocha',
-    price: 55
-  },
-  {
-    name: 'Iced Mocha',
-    price: 65
-  },
-  {
-    name: 'Hot Mocha Green Tea',
-    price: 55
-  },
-  {
-    name: 'Iced Mocha Green Tea',
-    price: 65
-  },
+		name: 'Iced Cappuccino',
+		price: 65
+	},
+	{
+		name: 'Hot Latte',
+		price: 55
+	},
+	{
+		name: 'Iced Latte',
+		price: 65
+	},
+	{
+		name: 'Hot Mocha',
+		price: 55
+	},
+	{
+		name: 'Iced Mocha',
+		price: 65
+	},
+	{
+		name: 'Hot Mocha Green Tea',
+		price: 55
+	},
+	{
+		name: 'Iced Mocha Green Tea',
+		price: 65
+	}
 ];
 
-const currentUserData = writable({})
+const currentUserData = writable({});
 
-const userData = writable(initUserData)
-const couponData = writable(initCouponData)
-const productData = writable(initProductData)
+const userData = writable(initUserData);
+const couponData = writable(initCouponData);
+const productData = writable(initProductData);
 
-userData.subscribe(value => {
-  console.log('userData', value)
-  if (!browser) return
-  localStorage.setItem('userData', JSON.stringify(value))
-})
-
-couponData.subscribe(value => {
-  console.log('couponData', value)
-  if (!browser) return;
-  localStorage.setItem('couponData', JSON.stringify(value))
-})
-
-productData.subscribe(value => {
-  console.log('productData', value)
-  if (!browser) return;
-  localStorage.setItem('productData', JSON.stringify(value))
-})
-
-export { userData, couponData, productData, initCouponData, initUserData, initProductData, currentUserData }
+export {
+	userData,
+	couponData,
+	productData,
+	initCouponData,
+	initUserData,
+	initProductData,
+	currentUserData
+};

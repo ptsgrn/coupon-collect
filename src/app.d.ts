@@ -20,7 +20,7 @@ interface SessionData {
 		fullname: string;
 		email: string;
 		phone: string;
-	}
+	};
 }
 
 // See https://kit.svelte.dev/docs/types#app
@@ -29,10 +29,10 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			session: import('svelte-kit-cookie-session').Session<SessionData>;;
+			session: import('svelte-kit-cookie-session').Session<SessionData>;
 		}
 		interface PageData {
-			session: SessionData
+			session: SessionData;
 		}
 		// interface Platform {}
 	}

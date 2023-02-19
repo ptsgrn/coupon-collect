@@ -1,6 +1,4 @@
 <svelte:head>
-	<title>
-		Coupony!
-	</title>
+	<title>Coupony!</title>
 </svelte:head>
 Hello world!
