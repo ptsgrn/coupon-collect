@@ -81,6 +81,24 @@ const userData = writable(initUserData);
 const couponData = writable(initCouponData);
 const productData = writable(initProductData);
 
+userData.subscribe((value) => {
+	if (browser) {
+		localStorage.setItem('userData', JSON.stringify(value));
+	}
+});
+
+couponData.subscribe((value) => {
+	if (browser) {
+		localStorage.setItem('couponData', JSON.stringify(value));
+	}
+});
+
+productData.subscribe((value) => {
+	if (browser) {
+		localStorage.setItem('productData', JSON.stringify(value));
+	}
+});
+
 export {
 	userData,
 	couponData,
